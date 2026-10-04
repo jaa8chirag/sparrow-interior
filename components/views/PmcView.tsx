@@ -33,8 +33,8 @@ function Ring({ pct, label, sub }: { pct: number; label: string; sub: string }) 
         />
         <defs>
           <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#e6d5a8" />
-            <stop offset="100%" stopColor="#a98a52" />
+            <stop offset="0%" stopColor="var(--gold-1)" />
+            <stop offset="100%" stopColor="var(--gold-3)" />
           </linearGradient>
         </defs>
       </svg>

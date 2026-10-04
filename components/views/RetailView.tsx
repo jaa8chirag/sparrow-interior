@@ -61,12 +61,12 @@ export default function RetailView() {
                 <p className="mb-4 text-xs text-muted">Relative visitors, weekday average</p>
                 <svg viewBox={`0 0 ${L.W} ${L.H}`} className="w-full">
                   <defs>
-                    <linearGradient id="fa" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#c9ae78" stopOpacity=".45" /><stop offset="100%" stopColor="#c9ae78" stopOpacity="0" /></linearGradient>
+                    <linearGradient id="fa" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="var(--gold-2)" stopOpacity=".45" /><stop offset="100%" stopColor="var(--gold-2)" stopOpacity="0" /></linearGradient>
                   </defs>
                   {[0, 1, 2, 3].map((g) => <line key={g} x1="24" x2={L.W - 24} y1={24 + g * 57.3} y2={24 + g * 57.3} stroke="rgba(224,204,156,.1)" />)}
                   <motion.path d={L.area} fill="url(#fa)" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1.2, delay: 0.5 }} />
-                  <motion.path d={L.d} fill="none" stroke="#e6d5a8" strokeWidth="2.5" strokeLinecap="round" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1.8, ease: "easeOut" }} />
-                  {L.pts.map((q, i) => i % 2 === 0 && <text key={i} x={q[0]} y={L.H - 4} fontSize="10" fill="#a9a79f" textAnchor="middle">{HOURS[i]}h</text>)}
+                  <motion.path d={L.d} fill="none" stroke="var(--gold-2)" strokeWidth="2.5" strokeLinecap="round" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1.8, ease: "easeOut" }} />
+                  {L.pts.map((q, i) => i % 2 === 0 && <text key={i} x={q[0]} y={L.H - 4} fontSize="10" fill="var(--muted)" textAnchor="middle">{HOURS[i]}h</text>)}
                 </svg>
               </div>
             </SpotlightCard>
@@ -96,7 +96,7 @@ export default function RetailView() {
                   <div key={l as string} className="mb-3 flex items-center gap-4">
                     <div className="w-32 text-sm text-muted">{l}</div>
                     <div className="h-9 flex-1 rounded-lg bg-bg">
-                      <motion.div className="gold-bg flex h-9 items-center justify-end rounded-lg pr-3 text-sm font-medium text-[#1b1c1e]" initial={{ width: 0 }} whileInView={{ width: `${v}%` }} viewport={{ once: true }} transition={{ duration: 1, delay: i * 0.15 }}>{v}%</motion.div>
+                      <motion.div className="gold-bg flex h-9 items-center justify-end rounded-lg pr-3 text-sm font-medium text-[var(--on-gold)]" initial={{ width: 0 }} whileInView={{ width: `${v}%` }} viewport={{ once: true }} transition={{ duration: 1, delay: i * 0.15 }}>{v}%</motion.div>
                     </div>
                   </div>
                 ))}

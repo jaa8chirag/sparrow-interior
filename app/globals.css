@@ -1,6 +1,20 @@
 @import "tailwindcss";
 
 :root {
+  --bg: #faf7f0;
+  --bg-2: #f1ece0;
+  --surface: #ffffff;
+  --line: rgba(120, 92, 40, 0.18);
+  --gold-1: #b8913f;
+  --gold-2: #946f2a;
+  --gold-3: #7a5a1e;
+  --fg: #23201a;
+  --muted: #6b665b;
+  --on-gold: #ffffff;
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
   --bg: #1b1c1e;
   --bg-2: #232426;
   --surface: #2b2c2f;
@@ -10,6 +24,8 @@
   --gold-3: #a98a52;
   --fg: #f2ede0;
   --muted: #a9a79f;
+  --on-gold: #1b1c1e;
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -31,6 +47,7 @@ html {
 }
 
 body {
+  transition: background-color .25s, color .25s;
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-jost), system-ui, sans-serif;
@@ -39,7 +56,7 @@ body {
 
 ::selection {
   background: var(--gold-2);
-  color: #1b1c1e;
+  color: var(--on-gold);
 }
 
 .gold-text {
@@ -64,8 +81,8 @@ body {
 
 .grid-lines {
   background-image:
-    linear-gradient(to right, rgba(224, 204, 156, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(224, 204, 156, 0.07) 1px, transparent 1px);
+    linear-gradient(to right, color-mix(in srgb, var(--gold-2) 10%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--gold-2) 10%, transparent) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
 }

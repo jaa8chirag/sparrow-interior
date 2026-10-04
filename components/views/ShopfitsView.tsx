@@ -92,7 +92,7 @@ export default function ShopfitsView() {
             {STEPS.map(([t, p], i) => (
               <Reveal key={t}>
                 <li className="relative rounded-2xl border border-line bg-surface/50 p-6">
-                  <span className="gold-bg absolute -left-[3.75rem] top-5 flex h-10 w-10 items-center justify-center rounded-full font-serif text-[#1b1c1e]">{i + 1}</span>
+                  <span className="gold-bg absolute -left-[3.75rem] top-5 flex h-10 w-10 items-center justify-center rounded-full font-serif text-[var(--on-gold)]">{i + 1}</span>
                   <h3 className="font-serif text-2xl">{t}</h3>
                   <p className="mt-1 text-sm text-muted">{p}</p>
                 </li>

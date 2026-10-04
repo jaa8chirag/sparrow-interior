@@ -129,7 +129,7 @@ export default function HomeView() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={img("1604719312566-8912e9227c6a", 900)} alt="Retail store" className="h-full w-full object-cover" />
             </div>
-            <div className="gold-bg absolute bottom-10 left-6 rounded-2xl px-6 py-5 text-[#1b1c1e]">
+            <div className="gold-bg absolute bottom-10 left-6 rounded-2xl px-6 py-5 text-[var(--on-gold)]">
               <div className="font-serif text-4xl">{SITE.since}</div>
               <div className="text-xs uppercase tracking-[0.2em]">Since</div>
             </div>
@@ -187,7 +187,7 @@ export default function HomeView() {
                     {on && (
                       <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }}>
                         <p className="mt-2 max-w-md text-sm text-fg/80">{d.description}</p>
-                        <Link href={d.href} className="mt-5 inline-flex items-center gap-2 rounded-full gold-bg px-5 py-2.5 text-sm font-medium text-[#1b1c1e]">
+                        <Link href={d.href} className="mt-5 inline-flex items-center gap-2 rounded-full gold-bg px-5 py-2.5 text-sm font-medium text-[var(--on-gold)]">
                           Explore <ArrowUpRight className="h-4 w-4" />
                         </Link>
                       </motion.div>

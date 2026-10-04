@@ -69,7 +69,7 @@ export function Tabs({
           key={t}
           onClick={() => onChange(t)}
           className={`relative rounded-full border px-5 py-2.5 text-sm transition-colors ${
-            value === t ? "border-transparent text-[#1b1c1e]" : "border-line text-muted hover:border-gold/50 hover:text-gold-light"
+            value === t ? "border-transparent text-[var(--on-gold)]" : "border-line text-muted hover:border-gold/50 hover:text-gold-light"
           }`}
         >
           {value === t && <motion.span layoutId={`tab-${tabs.join("")}`} className="gold-bg absolute inset-0 rounded-full" />}

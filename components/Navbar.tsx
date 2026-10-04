@@ -1,6 +1,7 @@
 "use client";
 
 import Brand from "./Brand";
+import ThemeToggle from "./ThemeToggle";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -48,20 +49,24 @@ export default function Navbar() {
           <li>
             <Link
               href="/#contact"
-              className="gold-bg rounded-full px-5 py-2.5 text-sm font-medium text-[#1b1c1e] transition hover:shadow-[0_0_30px_-5px_rgba(201,174,120,0.7)]"
+              className="gold-bg rounded-full px-5 py-2.5 text-sm font-medium text-[var(--on-gold)] transition hover:shadow-[0_0_30px_-5px_rgba(201,174,120,0.7)]"
             >
               Get in touch
             </Link>
           </li>
+          <li><ThemeToggle /></li>
         </ul>
 
+        <div className="flex items-center gap-2 lg:hidden">
+        <ThemeToggle />
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((o) => !o)}
-          className="rounded-lg border border-line p-2 text-gold lg:hidden"
+          className="rounded-lg border border-line p-2 text-gold"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
+        </div>
       </nav>
 
       <AnimatePresence>
@@ -81,7 +86,7 @@ export default function Navbar() {
                 </li>
               ))}
               <li>
-                <Link href="/#contact" className="gold-bg mt-3 block rounded-full py-3 text-center font-medium text-[#1b1c1e]">
+                <Link href="/#contact" className="gold-bg mt-3 block rounded-full py-3 text-center font-medium text-[var(--on-gold)]">
                   Get in touch
                 </Link>
               </li>

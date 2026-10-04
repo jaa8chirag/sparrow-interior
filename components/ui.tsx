@@ -64,7 +64,7 @@ export function Button({
     "group inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide transition-all duration-300";
   const styles =
     variant === "gold"
-      ? "gold-bg text-[#1b1c1e] hover:shadow-[0_0_40px_-5px_rgba(201,174,120,0.6)] hover:-translate-y-0.5"
+      ? "gold-bg text-[var(--on-gold)] hover:shadow-[0_0_40px_-5px_rgba(201,174,120,0.6)] hover:-translate-y-0.5"
       : "border border-gold/40 text-gold-light hover:border-gold hover:bg-gold/10";
   return (
     <Link href={href} className={`${base} ${styles}`}>

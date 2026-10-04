@@ -51,7 +51,7 @@ export default function ContactSection({ defaultInterest = "" }: { defaultIntere
               <textarea name="message" rows={4} placeholder="Tell us about your project" className={field} />
               <button
                 type="submit"
-                className="gold-bg flex w-full items-center justify-center gap-2 rounded-full py-3.5 font-medium text-[#1b1c1e] transition hover:shadow-[0_0_40px_-5px_rgba(201,174,120,0.6)]"
+                className="gold-bg flex w-full items-center justify-center gap-2 rounded-full py-3.5 font-medium text-[var(--on-gold)] transition hover:shadow-[0_0_40px_-5px_rgba(201,174,120,0.6)]"
               >
                 {sent ? "Opened — send it on WhatsApp" : "Send enquiry"} <Send className="h-4 w-4" />
               </button>

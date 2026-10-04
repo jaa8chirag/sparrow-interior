@@ -18,7 +18,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${jost.variable} ${playfair.variable}`}>
+    <html lang="en" data-theme="light" suppressHydrationWarning className={`${jost.variable} ${playfair.variable}`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}`,
+          }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col" suppressHydrationWarning>
         <Navbar />
         <main className="flex-1">{children}</main>
